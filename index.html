@@ -435,6 +435,45 @@
       text-decoration: none;
     }
 
+    /* ===== INSTAGRAM ===== */
+    .instagram {
+      background: var(--white);
+    }
+
+    .instagram-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .instagram-embed-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .instagram-follow {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .instagram-button {
+      display: inline-block;
+      padding: 0.8rem 2.5rem;
+      background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
+    }
+
+    .instagram-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(131, 58, 180, 0.4);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .hero-emoji { font-size: 3.5rem; }
@@ -605,6 +644,23 @@
     </p>
   </section>
 
+  <!-- INSTAGRAM -->
+  <section class="instagram">
+    <h2 class="section-title">&#128248; Instagram</h2>
+    <p class="section-subtitle">農園の日常をお届けしています</p>
+    <div class="instagram-container">
+      <div class="instagram-embed-wrapper">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CqC0wkgr6Uj/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);">
+        </blockquote>
+      </div>
+      <div class="instagram-follow">
+        <a href="https://www.instagram.com/nankai200/" class="instagram-button" target="_blank" rel="noopener">
+          @nankai200 をフォローする
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <h2>愛媛の太陽を、あなたの食卓へ</h2>
@@ -614,10 +670,12 @@
     </a>
   </section>
 
+  <script async src="//www.instagram.com/embed.js"></script>
+
   <!-- FOOTER -->
   <footer>
     <p>南海農園（ぱぷりん） &mdash; 愛媛県<br>
-      <a href="https://jp.mercari.com/user/profile/375568484" target="_blank" rel="noopener">メルカリプロフィール</a>
+      <a href="https://jp.mercari.com/user/profile/375568484" target="_blank" rel="noopener">メルカリ</a> ｜ <a href="https://www.instagram.com/nankai200/" target="_blank" rel="noopener">Instagram</a>
     </p>
   </footer>
 
