@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南海農園 — 愛媛のみかん直送 | ぱぷりん</title>
+  <meta name="description" content="愛媛県の南海農園から、紅まどんな・甘平・はるみなど極上の柑橘を産地直送。メルカリで販売中。">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --orange: #FF8C00;
+      --orange-light: #FFA940;
+      --orange-dark: #E07800;
+      --green: #4CAF50;
+      --green-dark: #2E7D32;
+      --cream: #FFF8F0;
+      --brown: #5D4037;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #333;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FF9800 0%, #FF5722 50%, #E65100 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      animation: shimmer 8s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(5%, 3%); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    .hero-emoji {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 0.4em;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 300;
+      margin: 1.5rem 0 2rem;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: var(--white);
+      color: var(--orange-dark);
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      background: #FFF3E0;
+    }
+
+    /* ===== FLOATING CIRCLES ===== */
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-circle:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s; }
+    .floating-circle:nth-child(2) { width: 150px; height: 150px; top: 60%; right: 10%; animation-delay: 2s; }
+    .floating-circle:nth-child(3) { width: 100px; height: 100px; bottom: 15%; left: 20%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .about-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      background: var(--cream);
+      transition: transform 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .about-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--orange-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFF3E0 100%);
+    }
+
+    .product-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    .product-image.benimadonna { background: linear-gradient(135deg, #FFE0B2, #FFCC80); }
+    .product-image.kanpei { background: linear-gradient(135deg, #FFF9C4, #FFE082); }
+    .product-image.harumi { background: linear-gradient(135deg, #C8E6C9, #A5D6A7); }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info .price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #E53935;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info .price small {
+      font-size: 0.7em;
+      font-weight: 400;
+      color: #999;
+    }
+
+    .product-info p {
+      font-size: 0.9rem;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    .product-badge {
+      display: inline-block;
+      background: #E53935;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== SEASON CALENDAR ===== */
+    .season {
+      background: var(--white);
+    }
+
+    .season-table {
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .season-table th {
+      background: var(--orange);
+      color: white;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .season-table td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+    }
+
+    .season-table tr:nth-child(even) {
+      background: #FFF8F0;
+    }
+
+    .season-table tr:hover {
+      background: #FFF3E0;
+    }
+
+    .season-badge {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-available { background: #E8F5E9; color: var(--green-dark); }
+    .badge-upcoming { background: #FFF3E0; color: var(--orange-dark); }
+    .badge-ended { background: #F5F5F5; color: #999; }
+
+    /* ===== TRUST ===== */
+    .trust {
+      background: linear-gradient(135deg, #FFF3E0 0%, var(--cream) 100%);
+    }
+
+    .trust-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .trust-item {
+      padding: 2rem 1rem;
+    }
+
+    .trust-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--orange);
+    }
+
+    .trust-label {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== SUMMER ===== */
+    .summer {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .summer .section-title {
+      color: white;
+    }
+
+    .summer .section-subtitle {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .summer-text {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 2;
+      opacity: 0.95;
+    }
+
+    /* ===== CTA BOTTOM ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #FF9800, #FF5722);
+      text-align: center;
+      padding: 5rem 1.5rem;
+      color: white;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .cta-button-white {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: white;
+      color: #E65100;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .cta-button-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--brown);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--orange-light);
+      text-decoration: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .hero-emoji { font-size: 3.5rem; }
+      section { padding: 3rem 1rem; }
+      .product-grid { grid-template-columns: 1fr; }
+      .season-table { font-size: 0.85rem; }
+      .season-table th, .season-table td { padding: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="hero-content">
+      <div class="hero-emoji">&#127818;</div>
+      <h1>南海農園
+        <span>NANKAI FARM &mdash; EHIME, JAPAN</span>
+      </h1>
+      <p>愛媛県から届く、太陽をたっぷり浴びた極上の柑橘。<br>
+        紅まどんな・甘平・はるみ &mdash; 産地直送でお届けします。</p>
+      <a href="https://jp.mercari.com/user/profile/375568484" class="cta-button" target="_blank" rel="noopener">
+        &#128722; メルカリで商品を見る
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2 class="section-title">南海農園について</h2>
+    <p class="section-subtitle">愛媛の豊かな気候が育む、こだわりの柑橘農園</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="icon">&#127793;</div>
+        <h3>愛媛県産のこだわり</h3>
+        <p>温暖な瀬戸内の気候と豊かな土壌で育った柑橘は、甘みと酸味のバランスが絶妙。品種ごとに最適な栽培方法を追求しています。</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">&#128230;</div>
+        <h3>農園から直送</h3>
+        <p>収穫したての新鮮な柑橘を、農園から直接お届け。市場を通さないから鮮度が違います。メルカリで手軽にご購入いただけます。</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">&#127807;</div>
+        <h3>夏は無農薬野菜も</h3>
+        <p>夏季は埼玉県から無農薬の夏野菜も出品。安心・安全な食材を季節に合わせてお届けしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <h2 class="section-title">人気の商品</h2>
+    <p class="section-subtitle">愛媛が誇るプレミアム柑橘をラインナップ</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image benimadonna">&#127818;</div>
+        <div class="product-info">
+          <span class="product-badge">大人気</span>
+          <h3>紅まどんな</h3>
+          <div class="price">&yen;2,200〜 <small>6個入り〜</small></div>
+          <p>ゼリーのような食感と溢れる果汁が特徴の愛媛県オリジナル品種。贈り物にも最適です。約3Kgセット（&yen;4,750）もあります。</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image kanpei">&#127819;</div>
+        <div class="product-info">
+          <span class="product-badge">極上</span>
+          <h3>甘平（かんぺい）</h3>
+          <div class="price">&yen;3,850 <small>約3Kg</small></div>
+          <p>シャキシャキの食感と圧倒的な甘さが魅力。愛媛生まれの高級柑橘。はるみとのお得なセットで「極上の極み」をお楽しみください。</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image harumi">&#127820;</div>
+        <div class="product-info">
+          <span class="product-badge">セット</span>
+          <h3>甘平 / はるみ セット</h3>
+          <div class="price">&yen;3,850〜 <small>3Kg〜</small></div>
+          <p>甘平の濃厚な甘さと、はるみのジューシーな味わいを一度に楽しめる贅沢セット。5Kgセット（&yen;5,850）もご用意。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON -->
+  <section class="season">
+    <h2 class="section-title">&#128197; 販売カレンダー</h2>
+    <p class="section-subtitle">品種ごとの販売時期をご確認ください</p>
+    <table class="season-table">
+      <thead>
+        <tr>
+          <th>品種</th>
+          <th>販売時期</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>&#127818; 紅まどんな</strong></td>
+          <td>12月〜</td>
+          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+        </tr>
+        <tr>
+          <td><strong>&#127819; 甘平</strong></td>
+          <td>1月〜</td>
+          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+        </tr>
+        <tr>
+          <td><strong>&#127820; はるみ</strong></td>
+          <td>1月末〜2月</td>
+          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+        </tr>
+        <tr>
+          <td><strong>&#127819; はるか</strong></td>
+          <td>2月下旬〜</td>
+          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+        </tr>
+        <tr>
+          <td><strong>&#127818; デコポン</strong></td>
+          <td>2月〜3月</td>
+          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+        </tr>
+        <tr>
+          <td><strong>&#127813; 夏野菜（無農薬）</strong></td>
+          <td>夏季</td>
+          <td><span class="season-badge badge-upcoming">夏季販売</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <h2 class="section-title">信頼の実績</h2>
+    <p class="section-subtitle">多くのお客様にご愛顧いただいています</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-number">194</div>
+        <div class="trust-label">取引評価</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">29</div>
+        <div class="trust-label">出品商品数</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">Lv.7</div>
+        <div class="trust-label">出品者レベル</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">&#9989;</div>
+        <div class="trust-label">本人確認済み</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMER -->
+  <section class="summer">
+    <h2 class="section-title">&#127807; 夏は無農薬野菜も</h2>
+    <p class="section-subtitle">埼玉県から安心の無農薬夏野菜をお届け</p>
+    <p class="summer-text">
+      柑橘シーズン以外も、埼玉県の畑から無農薬で育てた夏野菜を出品しています。<br>
+      化学肥料や農薬を使わない、自然の恵みをそのまま食卓へ。<br>
+      季節ごとの旬の味わいをお楽しみください。
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>愛媛の太陽を、あなたの食卓へ</h2>
+    <p>メルカリで簡単購入。農園直送の新鮮な柑橘をお届けします。</p>
+    <a href="https://jp.mercari.com/user/profile/375568484" class="cta-button-white" target="_blank" rel="noopener">
+      &#128722; メルカリショップを見る
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>南海農園（ぱぷりん） &mdash; 愛媛県<br>
+      <a href="https://jp.mercari.com/user/profile/375568484" target="_blank" rel="noopener">メルカリプロフィール</a>
+    </p>
+  </footer>
+
+</body>
+</html>
