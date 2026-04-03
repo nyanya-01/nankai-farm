@@ -435,6 +435,71 @@
       text-decoration: none;
     }
 
+    /* ===== REVIEWS ===== */
+    .reviews {
+      background: linear-gradient(180deg, #FFF8F0 0%, var(--white) 100%);
+    }
+
+    .reviews-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--orange);
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .review-stars {
+      color: #FFB300;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .review-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .review-name {
+      font-weight: 600;
+      color: #888;
+    }
+
+    .reviews-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    .reviews-note a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     /* ===== INSTAGRAM ===== */
     .instagram {
       background: var(--white);
@@ -641,6 +706,65 @@
       柑橘シーズン以外も、埼玉県の畑から無農薬で育てた夏野菜を出品しています。<br>
       化学肥料や農薬を使わない、自然の恵みをそのまま食卓へ。<br>
       季節ごとの旬の味わいをお楽しみください。
+    </p>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h2 class="section-title">お客様の声</h2>
+    <p class="section-subtitle">メルカリでの評価 &mdash; 良かった 100% (194件)</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">すご～い、きれいで、美味しそう。ホントに、マドンナみたいです。こんなに、お安くして頂いてすみません。先日、デパートで買ったのは１個が800円でした。味わい深いマドンナ、ありがとうございました。</p>
+        <div class="review-meta">
+          <span class="review-name">みっちゃん さん</span>
+          <span>2025/12</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">両方とも、本当に驚くほど美味しいみかんでした！！食べ比べもできて、贅沢なセットでした。また機会がありましたら、ぜひ宜しくお願いします。</p>
+        <div class="review-meta">
+          <span class="review-name">さっち さん</span>
+          <span>2024/02</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">対応速く入金後、翌日には届き早速いただき甘くて美味しかったです。</p>
+        <div class="review-meta">
+          <span class="review-name">なる さん</span>
+          <span>2025/12</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">無事に届きました。甘平 甘くて美味しいですね。はるみはまだ食べてませんが楽しみです。ありがとうございます。</p>
+        <div class="review-meta">
+          <span class="review-name">山さん さん</span>
+          <span>2024/02</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">かわいいおみかんたちに思わずにっこりしてしまいました。すぐに送ってくださり感謝しております。</p>
+        <div class="review-meta">
+          <span class="review-name">RAIN さん</span>
+          <span>2023/02</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">綺麗に梱包して送って下さり、ありがとうございました。とてもご丁寧でご親切に対応していただき、発送も早くスムーズなお取引をさせていただきました。</p>
+        <div class="review-meta">
+          <span class="review-name">ぼんぼん さん</span>
+          <span>2024/02</span>
+        </div>
+      </div>
+    </div>
+    <p class="reviews-note">
+      <a href="https://jp.mercari.com/user/reviews/375568484" target="_blank" rel="noopener">&#8594; すべての評価を見る（194件）</a>
     </p>
   </section>
 
