@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>南海農園 — 愛媛のみかん直送 | ぱぷりん</title>
-  <meta name="description" content="愛媛県の南海農園から、紅まどんな・甘平・はるみなど極上の柑橘を産地直送。メルカリで販売中。">
+  <title>Nankai Farm — Premium Citrus from Ehime, Japan</title>
+  <meta name="description" content="Fresh premium citrus shipped directly from Nankai Farm in Ehime, Japan. Beni Madonna, Kanpei, Harumi and more. Available on Mercari.">
   <link rel="alternate" hreflang="ja" href="index.html">
   <link rel="alternate" hreflang="en" href="en.html">
   <style>
@@ -28,6 +28,41 @@
       color: #333;
       background: var(--cream);
       overflow-x: hidden;
+    }
+
+    /* ===== LANG SWITCH ===== */
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-switch a {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .lang-switch .active {
+      background: var(--white);
+      color: var(--orange-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .lang-switch .inactive {
+      background: rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    .lang-switch .inactive:hover {
+      background: rgba(255,255,255,0.5);
     }
 
     /* ===== HERO ===== */
@@ -139,9 +174,7 @@
     }
 
     /* ===== SECTION COMMON ===== */
-    section {
-      padding: 5rem 1.5rem;
-    }
+    section { padding: 5rem 1.5rem; }
 
     .section-title {
       text-align: center;
@@ -160,9 +193,7 @@
     }
 
     /* ===== ABOUT ===== */
-    .about {
-      background: var(--white);
-    }
+    .about { background: var(--white); }
 
     .about-grid {
       max-width: 1000px;
@@ -180,32 +211,13 @@
       transition: transform 0.3s ease;
     }
 
-    .about-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .about-card .icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-card h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--orange-dark);
-      margin-bottom: 0.8rem;
-    }
-
-    .about-card p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #666;
-    }
+    .about-card:hover { transform: translateY(-5px); }
+    .about-card .icon { font-size: 3rem; margin-bottom: 1rem; }
+    .about-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--orange-dark); margin-bottom: 0.8rem; }
+    .about-card p { font-size: 0.95rem; line-height: 1.8; color: #666; }
 
     /* ===== PRODUCTS ===== */
-    .products {
-      background: linear-gradient(180deg, var(--cream) 0%, #FFF3E0 100%);
-    }
+    .products { background: linear-gradient(180deg, var(--cream) 0%, #FFF3E0 100%); }
 
     .product-grid {
       max-width: 1100px;
@@ -241,35 +253,11 @@
     .product-image.kanpei { background: linear-gradient(135deg, #FFF9C4, #FFE082); }
     .product-image.harumi { background: linear-gradient(135deg, #C8E6C9, #A5D6A7); }
 
-    .product-info {
-      padding: 1.5rem;
-    }
-
-    .product-info h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--brown);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-info .price {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #E53935;
-      margin-bottom: 0.5rem;
-    }
-
-    .product-info .price small {
-      font-size: 0.7em;
-      font-weight: 400;
-      color: #999;
-    }
-
-    .product-info p {
-      font-size: 0.9rem;
-      color: #777;
-      line-height: 1.7;
-    }
+    .product-info { padding: 1.5rem; }
+    .product-info h3 { font-size: 1.3rem; font-weight: 700; color: var(--brown); margin-bottom: 0.5rem; }
+    .product-info .price { font-size: 1.5rem; font-weight: 900; color: #E53935; margin-bottom: 0.5rem; }
+    .product-info .price small { font-size: 0.7em; font-weight: 400; color: #999; }
+    .product-info p { font-size: 0.9rem; color: #777; line-height: 1.7; }
 
     .product-badge {
       display: inline-block;
@@ -283,9 +271,7 @@
     }
 
     /* ===== SEASON CALENDAR ===== */
-    .season {
-      background: var(--white);
-    }
+    .season { background: var(--white); }
 
     .season-table {
       max-width: 800px;
@@ -297,44 +283,17 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    .season-table th {
-      background: var(--orange);
-      color: white;
-      padding: 1rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+    .season-table th { background: var(--orange); color: white; padding: 1rem; font-weight: 600; font-size: 0.95rem; }
+    .season-table td { padding: 1rem 1.2rem; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; }
+    .season-table tr:nth-child(even) { background: #FFF8F0; }
+    .season-table tr:hover { background: #FFF3E0; }
 
-    .season-table td {
-      padding: 1rem 1.2rem;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.95rem;
-    }
-
-    .season-table tr:nth-child(even) {
-      background: #FFF8F0;
-    }
-
-    .season-table tr:hover {
-      background: #FFF3E0;
-    }
-
-    .season-badge {
-      display: inline-block;
-      padding: 0.2rem 0.7rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
+    .season-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
     .badge-available { background: #E8F5E9; color: var(--green-dark); }
     .badge-upcoming { background: #FFF3E0; color: var(--orange-dark); }
-    .badge-ended { background: #F5F5F5; color: #999; }
 
     /* ===== TRUST ===== */
-    .trust {
-      background: linear-gradient(135deg, #FFF3E0 0%, var(--cream) 100%);
-    }
+    .trust { background: linear-gradient(135deg, #FFF3E0 0%, var(--cream) 100%); }
 
     .trust-grid {
       max-width: 900px;
@@ -345,21 +304,9 @@
       text-align: center;
     }
 
-    .trust-item {
-      padding: 2rem 1rem;
-    }
-
-    .trust-number {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--orange);
-    }
-
-    .trust-label {
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 0.3rem;
-    }
+    .trust-item { padding: 2rem 1rem; }
+    .trust-number { font-size: 3rem; font-weight: 900; color: var(--orange); }
+    .trust-label { font-size: 0.9rem; color: #888; margin-top: 0.3rem; }
 
     /* ===== SUMMER ===== */
     .summer {
@@ -368,21 +315,9 @@
       text-align: center;
     }
 
-    .summer .section-title {
-      color: white;
-    }
-
-    .summer .section-subtitle {
-      color: rgba(255,255,255,0.8);
-    }
-
-    .summer-text {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 2;
-      opacity: 0.95;
-    }
+    .summer .section-title { color: white; }
+    .summer .section-subtitle { color: rgba(255,255,255,0.8); }
+    .summer-text { max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 2; opacity: 0.95; }
 
     /* ===== CTA BOTTOM ===== */
     .cta-section {
@@ -392,18 +327,8 @@
       color: white;
     }
 
-    .cta-section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .cta-section p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-    }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+    .cta-section p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; line-height: 1.8; }
 
     .cta-button-white {
       display: inline-block;
@@ -432,15 +357,10 @@
       font-size: 0.85rem;
     }
 
-    footer a {
-      color: var(--orange-light);
-      text-decoration: none;
-    }
+    footer a { color: var(--orange-light); text-decoration: none; }
 
     /* ===== REVIEWS ===== */
-    .reviews {
-      background: linear-gradient(180deg, #FFF8F0 0%, var(--white) 100%);
-    }
+    .reviews { background: linear-gradient(180deg, #FFF8F0 0%, var(--white) 100%); }
 
     .reviews-grid {
       max-width: 1000px;
@@ -459,69 +379,19 @@
       transition: transform 0.3s ease;
     }
 
-    .review-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .review-stars {
-      color: #FFB300;
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .review-text {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .review-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-
-    .review-name {
-      font-weight: 600;
-      color: #888;
-    }
-
-    .reviews-note {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #999;
-    }
-
-    .reviews-note a {
-      color: var(--orange);
-      text-decoration: none;
-      font-weight: 600;
-    }
+    .review-card:hover { transform: translateY(-4px); }
+    .review-stars { color: #FFB300; font-size: 1.1rem; margin-bottom: 0.8rem; }
+    .review-text { font-size: 0.95rem; line-height: 1.8; color: #555; margin-bottom: 1rem; }
+    .review-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #aaa; }
+    .review-name { font-weight: 600; color: #888; }
+    .reviews-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #999; }
+    .reviews-note a { color: var(--orange); text-decoration: none; font-weight: 600; }
 
     /* ===== INSTAGRAM ===== */
-    .instagram {
-      background: var(--white);
-    }
-
-    .instagram-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .instagram-embed-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
-    .instagram-follow {
-      text-align: center;
-      margin-top: 2rem;
-    }
+    .instagram { background: var(--white); }
+    .instagram-container { max-width: 900px; margin: 0 auto; }
+    .instagram-embed-wrapper { display: flex; justify-content: center; margin-bottom: 2rem; }
+    .instagram-follow { text-align: center; margin-top: 2rem; }
 
     .instagram-button {
       display: inline-block;
@@ -541,41 +411,6 @@
       box-shadow: 0 8px 25px rgba(131, 58, 180, 0.4);
     }
 
-    /* ===== LANG SWITCH ===== */
-    .lang-switch {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 100;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .lang-switch a {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .lang-switch .active {
-      background: var(--white);
-      color: var(--orange-dark);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    .lang-switch .inactive {
-      background: rgba(255,255,255,0.3);
-      color: white;
-    }
-
-    .lang-switch .inactive:hover {
-      background: rgba(255,255,255,0.5);
-    }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .hero-emoji { font-size: 3.5rem; }
@@ -590,8 +425,8 @@
 
   <!-- LANGUAGE SWITCH -->
   <nav class="lang-switch">
-    <a href="index.html" class="active">JP</a>
-    <a href="en.html" class="inactive">EN</a>
+    <a href="index.html" class="inactive">JP</a>
+    <a href="en.html" class="active">EN</a>
   </nav>
 
   <!-- HERO -->
@@ -601,70 +436,70 @@
     <div class="floating-circle"></div>
     <div class="hero-content">
       <div class="hero-emoji">&#127818;</div>
-      <h1>南海農園
-        <span>NANKAI FARM &mdash; EHIME, JAPAN</span>
+      <h1>Nankai Farm
+        <span>PREMIUM CITRUS &mdash; EHIME, JAPAN</span>
       </h1>
-      <p>愛媛県から届く、太陽をたっぷり浴びた極上の柑橘。<br>
-        紅まどんな・甘平・はるみ &mdash; 産地直送でお届けします。</p>
+      <p>Sun-ripened premium citrus, shipped directly from Ehime Prefecture, Japan.<br>
+        Beni Madonna, Kanpei, Harumi &mdash; farm-to-table freshness.</p>
       <a href="https://jp.mercari.com/user/profile/375568484" class="cta-button" target="_blank" rel="noopener">
-        &#128722; メルカリで商品を見る
+        &#128722; Shop on Mercari
       </a>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="about">
-    <h2 class="section-title">南海農園について</h2>
-    <p class="section-subtitle">愛媛の豊かな気候が育む、こだわりの柑橘農園</p>
+    <h2 class="section-title">About Nankai Farm</h2>
+    <p class="section-subtitle">Premium citrus nurtured by the warm climate of Ehime</p>
     <div class="about-grid">
       <div class="about-card">
         <div class="icon">&#127793;</div>
-        <h3>愛媛県産のこだわり</h3>
-        <p>温暖な瀬戸内の気候と豊かな土壌で育った柑橘は、甘みと酸味のバランスが絶妙。品種ごとに最適な栽培方法を追求しています。</p>
+        <h3>Ehime Quality</h3>
+        <p>Grown in the warm Setouchi climate with rich soil, our citrus achieves the perfect balance of sweetness and acidity. We pursue optimal cultivation methods for each variety.</p>
       </div>
       <div class="about-card">
         <div class="icon">&#128230;</div>
-        <h3>農園から直送</h3>
-        <p>収穫したての新鮮な柑橘を、農園から直接お届け。市場を通さないから鮮度が違います。メルカリで手軽にご購入いただけます。</p>
+        <h3>Direct from Farm</h3>
+        <p>Freshly harvested citrus delivered straight from our farm to you. By skipping the market, we ensure unmatched freshness. Easy to purchase on Mercari.</p>
       </div>
       <div class="about-card">
         <div class="icon">&#127807;</div>
-        <h3>夏は無農薬野菜も</h3>
-        <p>夏季は埼玉県から無農薬の夏野菜も出品。安心・安全な食材を季節に合わせてお届けしています。</p>
+        <h3>Pesticide-Free Veggies</h3>
+        <p>In summer, we also offer pesticide-free vegetables from Saitama Prefecture. Safe, natural produce delivered seasonally to your table.</p>
       </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section class="products">
-    <h2 class="section-title">人気の商品</h2>
-    <p class="section-subtitle">愛媛が誇るプレミアム柑橘をラインナップ</p>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-subtitle">Ehime's finest premium citrus lineup</p>
     <div class="product-grid">
       <div class="product-card">
         <div class="product-image benimadonna">&#127818;</div>
         <div class="product-info">
-          <span class="product-badge">大人気</span>
-          <h3>紅まどんな</h3>
-          <div class="price">&yen;2,200〜 <small>6個入り〜</small></div>
-          <p>ゼリーのような食感と溢れる果汁が特徴の愛媛県オリジナル品種。贈り物にも最適です。約3Kgセット（&yen;4,750）もあります。</p>
+          <span class="product-badge">Popular</span>
+          <h3>Beni Madonna</h3>
+          <div class="price">&yen;2,200~ <small>6 pieces~</small></div>
+          <p>An Ehime-original variety with a jelly-like texture and bursting juice. Perfect as a gift. Also available in ~3Kg sets (&yen;4,750).</p>
         </div>
       </div>
       <div class="product-card">
         <div class="product-image kanpei">&#127819;</div>
         <div class="product-info">
-          <span class="product-badge">極上</span>
-          <h3>甘平（かんぺい）</h3>
-          <div class="price">&yen;3,850 <small>約3Kg</small></div>
-          <p>シャキシャキの食感と圧倒的な甘さが魅力。愛媛生まれの高級柑橘。はるみとのお得なセットで「極上の極み」をお楽しみください。</p>
+          <span class="product-badge">Premium</span>
+          <h3>Kanpei</h3>
+          <div class="price">&yen;3,850 <small>~3Kg</small></div>
+          <p>Crisp texture with overwhelming sweetness. A high-end citrus born in Ehime. Enjoy the ultimate taste in a set with Harumi.</p>
         </div>
       </div>
       <div class="product-card">
         <div class="product-image harumi">&#127820;</div>
         <div class="product-info">
-          <span class="product-badge">セット</span>
-          <h3>甘平 / はるみ セット</h3>
-          <div class="price">&yen;3,850〜 <small>3Kg〜</small></div>
-          <p>甘平の濃厚な甘さと、はるみのジューシーな味わいを一度に楽しめる贅沢セット。5Kgセット（&yen;5,850）もご用意。</p>
+          <span class="product-badge">Set</span>
+          <h3>Kanpei / Harumi Set</h3>
+          <div class="price">&yen;3,850~ <small>3Kg~</small></div>
+          <p>A luxurious set combining Kanpei's rich sweetness with Harumi's juicy flavor. 5Kg set (&yen;5,850) also available.</p>
         </div>
       </div>
     </div>
@@ -672,46 +507,46 @@
 
   <!-- SEASON -->
   <section class="season">
-    <h2 class="section-title">&#128197; 販売カレンダー</h2>
-    <p class="section-subtitle">品種ごとの販売時期をご確認ください</p>
+    <h2 class="section-title">&#128197; Season Calendar</h2>
+    <p class="section-subtitle">Check availability by variety</p>
     <table class="season-table">
       <thead>
         <tr>
-          <th>品種</th>
-          <th>販売時期</th>
-          <th>ステータス</th>
+          <th>Variety</th>
+          <th>Season</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>&#127818; 紅まどんな</strong></td>
-          <td>12月〜</td>
-          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+          <td><strong>&#127818; Beni Madonna</strong></td>
+          <td>December~</td>
+          <td><span class="season-badge badge-upcoming">Winter</span></td>
         </tr>
         <tr>
-          <td><strong>&#127819; 甘平</strong></td>
-          <td>1月〜</td>
-          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+          <td><strong>&#127819; Kanpei</strong></td>
+          <td>January~</td>
+          <td><span class="season-badge badge-upcoming">Winter</span></td>
         </tr>
         <tr>
-          <td><strong>&#127820; はるみ</strong></td>
-          <td>1月末〜2月</td>
-          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+          <td><strong>&#127820; Harumi</strong></td>
+          <td>Late Jan ~ Feb</td>
+          <td><span class="season-badge badge-upcoming">Winter</span></td>
         </tr>
         <tr>
-          <td><strong>&#127819; はるか</strong></td>
-          <td>2月下旬〜</td>
-          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+          <td><strong>&#127819; Haruka</strong></td>
+          <td>Late February~</td>
+          <td><span class="season-badge badge-upcoming">Winter</span></td>
         </tr>
         <tr>
-          <td><strong>&#127818; デコポン</strong></td>
-          <td>2月〜3月</td>
-          <td><span class="season-badge badge-upcoming">冬季販売</span></td>
+          <td><strong>&#127818; Dekopon</strong></td>
+          <td>Feb ~ March</td>
+          <td><span class="season-badge badge-upcoming">Winter</span></td>
         </tr>
         <tr>
-          <td><strong>&#127813; 夏野菜（無農薬）</strong></td>
-          <td>夏季</td>
-          <td><span class="season-badge badge-upcoming">夏季販売</span></td>
+          <td><strong>&#127813; Summer Veggies (Pesticide-Free)</strong></td>
+          <td>Summer</td>
+          <td><span class="season-badge badge-upcoming">Summer</span></td>
         </tr>
       </tbody>
     </table>
@@ -719,102 +554,102 @@
 
   <!-- TRUST -->
   <section class="trust">
-    <h2 class="section-title">信頼の実績</h2>
-    <p class="section-subtitle">多くのお客様にご愛顧いただいています</p>
+    <h2 class="section-title">Trusted Track Record</h2>
+    <p class="section-subtitle">Loved by many customers</p>
     <div class="trust-grid">
       <div class="trust-item">
         <div class="trust-number">194</div>
-        <div class="trust-label">取引評価</div>
+        <div class="trust-label">Reviews</div>
       </div>
       <div class="trust-item">
         <div class="trust-number">29</div>
-        <div class="trust-label">出品商品数</div>
+        <div class="trust-label">Listed Items</div>
       </div>
       <div class="trust-item">
         <div class="trust-number">Lv.7</div>
-        <div class="trust-label">出品者レベル</div>
+        <div class="trust-label">Seller Level</div>
       </div>
       <div class="trust-item">
         <div class="trust-number">&#9989;</div>
-        <div class="trust-label">本人確認済み</div>
+        <div class="trust-label">Verified Seller</div>
       </div>
     </div>
   </section>
 
   <!-- SUMMER -->
   <section class="summer">
-    <h2 class="section-title">&#127807; 夏は無農薬野菜も</h2>
-    <p class="section-subtitle">埼玉県から安心の無農薬夏野菜をお届け</p>
+    <h2 class="section-title">&#127807; Pesticide-Free Summer Veggies</h2>
+    <p class="section-subtitle">Fresh from Saitama to your table</p>
     <p class="summer-text">
-      柑橘シーズン以外も、埼玉県の畑から無農薬で育てた夏野菜を出品しています。<br>
-      化学肥料や農薬を使わない、自然の恵みをそのまま食卓へ。<br>
-      季節ごとの旬の味わいをお楽しみください。
+      Outside citrus season, we offer pesticide-free summer vegetables from our farm in Saitama.<br>
+      No chemical fertilizers, no pesticides &mdash; just pure, natural goodness.<br>
+      Enjoy the best seasonal flavors straight from the field.
     </p>
   </section>
 
   <!-- REVIEWS -->
   <section class="reviews">
-    <h2 class="section-title">お客様の声</h2>
-    <p class="section-subtitle">メルカリでの評価 &mdash; 良かった 100% (194件)</p>
+    <h2 class="section-title">Customer Reviews</h2>
+    <p class="section-subtitle">100% positive ratings on Mercari (194 reviews)</p>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">すご～い、きれいで、美味しそう。ホントに、マドンナみたいです。こんなに、お安くして頂いてすみません。先日、デパートで買ったのは１個が800円でした。味わい深いマドンナ、ありがとうございました。</p>
+        <p class="review-text">Amazing! So beautiful and delicious-looking. Truly like a Madonna. Department stores charge 800 yen per piece, but you offered such a great price. Thank you!</p>
         <div class="review-meta">
-          <span class="review-name">みっちゃん さん</span>
+          <span class="review-name">Micchan</span>
           <span>2025/12</span>
         </div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">両方とも、本当に驚くほど美味しいみかんでした！！食べ比べもできて、贅沢なセットでした。また機会がありましたら、ぜひ宜しくお願いします。</p>
+        <p class="review-text">Both varieties were unbelievably delicious! Being able to compare them side by side was a real treat. Would love to order again!</p>
         <div class="review-meta">
-          <span class="review-name">さっち さん</span>
+          <span class="review-name">Sacchi</span>
           <span>2024/02</span>
         </div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">対応速く入金後、翌日には届き早速いただき甘くて美味しかったです。</p>
+        <p class="review-text">Super fast shipping &mdash; arrived the next day after payment. So sweet and delicious!</p>
         <div class="review-meta">
-          <span class="review-name">なる さん</span>
+          <span class="review-name">Naru</span>
           <span>2025/12</span>
         </div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">無事に届きました。甘平 甘くて美味しいですね。はるみはまだ食べてませんが楽しみです。ありがとうございます。</p>
+        <p class="review-text">The Kanpei is wonderfully sweet. Can't wait to try the Harumi too. Thank you!</p>
         <div class="review-meta">
-          <span class="review-name">山さん さん</span>
+          <span class="review-name">Yama-san</span>
           <span>2024/02</span>
         </div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">かわいいおみかんたちに思わずにっこりしてしまいました。すぐに送ってくださり感謝しております。</p>
+        <p class="review-text">The adorable little oranges made me smile instantly. Thank you for shipping so quickly!</p>
         <div class="review-meta">
-          <span class="review-name">RAIN さん</span>
+          <span class="review-name">RAIN</span>
           <span>2023/02</span>
         </div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">綺麗に梱包して送って下さり、ありがとうございました。とてもご丁寧でご親切に対応していただき、発送も早くスムーズなお取引をさせていただきました。</p>
+        <p class="review-text">Beautifully packaged and shipped. Very polite and kind service with fast delivery. A smooth and pleasant transaction!</p>
         <div class="review-meta">
-          <span class="review-name">ぼんぼん さん</span>
+          <span class="review-name">Bonbon</span>
           <span>2024/02</span>
         </div>
       </div>
     </div>
     <p class="reviews-note">
-      <a href="https://jp.mercari.com/user/reviews/375568484" target="_blank" rel="noopener">&#8594; すべての評価を見る（194件）</a>
+      <a href="https://jp.mercari.com/user/reviews/375568484" target="_blank" rel="noopener">&#8594; View all reviews (194)</a>
     </p>
   </section>
 
   <!-- INSTAGRAM -->
   <section class="instagram">
     <h2 class="section-title">&#128248; Instagram</h2>
-    <p class="section-subtitle">農園の日常をお届けしています</p>
+    <p class="section-subtitle">Follow our farm life</p>
     <div class="instagram-container">
       <div class="instagram-embed-wrapper">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CqC0wkgr6Uj/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);">
@@ -822,7 +657,7 @@
       </div>
       <div class="instagram-follow">
         <a href="https://www.instagram.com/nankai200/" class="instagram-button" target="_blank" rel="noopener">
-          @nankai200 をフォローする
+          Follow @nankai200
         </a>
       </div>
     </div>
@@ -830,10 +665,10 @@
 
   <!-- CTA -->
   <section class="cta-section">
-    <h2>愛媛の太陽を、あなたの食卓へ</h2>
-    <p>メルカリで簡単購入。農園直送の新鮮な柑橘をお届けします。</p>
+    <h2>Bring Ehime's Sunshine to Your Table</h2>
+    <p>Easy purchase on Mercari. Farm-fresh citrus delivered to you.</p>
     <a href="https://jp.mercari.com/user/profile/375568484" class="cta-button-white" target="_blank" rel="noopener">
-      &#128722; メルカリショップを見る
+      &#128722; Visit Our Mercari Shop
     </a>
   </section>
 
@@ -841,8 +676,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>南海農園（ぱぷりん） &mdash; 愛媛県<br>
-      <a href="https://jp.mercari.com/user/profile/375568484" target="_blank" rel="noopener">メルカリ</a> ｜ <a href="https://www.instagram.com/nankai200/" target="_blank" rel="noopener">Instagram</a>
+    <p>Nankai Farm (Papurin) &mdash; Ehime, Japan<br>
+      <a href="https://jp.mercari.com/user/profile/375568484" target="_blank" rel="noopener">Mercari</a> ｜ <a href="https://www.instagram.com/nankai200/" target="_blank" rel="noopener">Instagram</a>
     </p>
   </footer>
 
